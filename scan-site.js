@@ -38,6 +38,7 @@ var scripts = document.querySelectorAll("script[src]");
 
 var fullDomains = [];
 var domains = [];
+async function run_script(){
 for (i=0;i<scripts.length;i++) {
     var hstName = extractHostname(scripts[i].src);
     if(window.location.host.includes(hstName)) {
@@ -63,6 +64,8 @@ for (i=0;i<scripts.length;i++) {
         }
     }
 }
+}
+run_script();
 console.log("A list of all domains");
 console.table(domains);
 console.log("A list of all scripts");
